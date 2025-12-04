@@ -14,12 +14,13 @@ function EducationalExperience() {
     e.preventDefault();
     console.log("Submitted:", { degree, school });
   };
+  
 
   return (
     <div>
-      <h2>Educational Experience</h2>
+      <h2 className="section-title">Educational Experience</h2>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="formInputContainer">
           <Input label="Degree" value={degree} onChange={(e) => setDegree(e.target.value)}></Input>
           <Input label="School" value={school} onChange={(e) => setSchool(e.target.value)}></Input>
           <Input label="City" value={city} onChange={(e) => setCity(e.target.value)}></Input>

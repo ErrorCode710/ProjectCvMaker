@@ -16,16 +16,17 @@ function ProfessionalExperience() {
 
   return (
     <div>
-      <h2>Professional Experience</h2>
+      <h2 className="section-title">Professional Experience</h2>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="formInputContainer">
           <Input label="Job Title" value={jobTitle} onChange={(e) => setJobTitle(e.target.value)}></Input>
           <Input label="Company" value={company} onChange={(e) => setCompany(e.target.value)}></Input>
-
           <Input label="Year Begin" type="date" value={yearBegin} onChange={(e) => setYearBegin(e.target.value)}></Input>
           <Input label="Year End" type="date" value={yearEnd} onChange={(e) => setYearEnd(e.target.value)}></Input>
-          <Input label="Skill Description " value={skillDesc} onChange={(e) => setSkillDesc(e.target.value)}></Input>
-          <div></div>
+          <div>
+            <label>Skill Description</label>
+            <textarea value={skillDesc} onChange={(e) => setSkillDesc(e.target.value)}></textarea>
+          </div>
         </form>
       </div>
     </div>
