@@ -1,4 +1,5 @@
 function CvButton(props) {
-  return <button>{props.name}</button>;
+  return <button className={props.style}>{props.name}</button>;
 }
 export default CvButton;
+

@@ -2,13 +2,15 @@ import GeneralInformation from "../GeneralInformation";
 import EducationalExperience from "../EducationalExperience";
 import ProfessionalExperience from "../ProfessionalExperience";
 // import classes from "./CvForm.module.css";
-import "./CvForm.css"
-function CvForm() {
+import "./CvForm.css";
+
+function CvForm(props) {
+
   return (
     <div className="cvContainer">
-      <GeneralInformation></GeneralInformation>
-      <EducationalExperience></EducationalExperience>
-      <ProfessionalExperience></ProfessionalExperience>
+      <GeneralInformation generalInfo={props.generalInfo} setGeneralInfo={props.setGeneralInfo}></GeneralInformation>
+      {/* <EducationalExperience></EducationalExperience>
+      <ProfessionalExperience></ProfessionalExperience> */}
     </div>
   );
 }

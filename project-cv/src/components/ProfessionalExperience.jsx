@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Input from "./Input";
+import CvButton from "./CvButton";
 
 function ProfessionalExperience() {
   //   console.log(useState(4));
@@ -27,6 +28,8 @@ function ProfessionalExperience() {
             <label>Skill Description</label>
             <textarea value={skillDesc} onChange={(e) => setSkillDesc(e.target.value)}></textarea>
           </div>
+          <CvButton style="button-9" name="Submit"></CvButton>
+          <CvButton style="button-9 button-9-edit" name="Edit"></CvButton>
         </form>
       </div>
     </div>

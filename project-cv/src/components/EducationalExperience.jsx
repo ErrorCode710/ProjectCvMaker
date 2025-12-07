@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Input from "./Input";
+import CvButton from "./CvButton";
 
 function EducationalExperience() {
   //   console.log(useState(4));
@@ -28,6 +29,8 @@ function EducationalExperience() {
           <Input label="Year Begin" type="date" value={yearBegin} onChange={(e) => setYearBegin(e.target.value)}></Input>
           <Input label="Year End" type="date" value={yearEnd} onChange={(e) => setYearEnd(e.target.value)}></Input>
         </form>
+        <CvButton style="button-9" name="Submit"></CvButton>
+        <CvButton style="button-9 button-9-edit" name="Edit"></CvButton>
       </div>
     </div>
   );

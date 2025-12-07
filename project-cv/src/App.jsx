@@ -1,10 +1,11 @@
 import "./App.css";
-import CvForm from "./components/CvForm";
+
+import CvBuilder from "./components/CvBuilder";
 
 function App() {
   return (
     <>
-      <CvForm></CvForm>
+      <CvBuilder></CvBuilder>
     </>
   );
 }
