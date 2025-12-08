@@ -9,7 +9,7 @@ function GeneralInformation({ generalInfo, setGeneralInfo }) {
   // const [phoneNo, setPhoneNo] = useState("");
   // const [address, setAddress] = useState("");
 
-  console.log(setGeneralInfo);
+  console.log(generalInfo);
   const handleChange = (field, value) => {
     setGeneralInfo({
       ...generalInfo,

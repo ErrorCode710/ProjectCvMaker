@@ -8,13 +8,37 @@ function CvBuilder() {
     phoneNo: "",
     address: "",
   });
-   
- console.log(generalInfo);
+
+  const [educationalInfo, setEducationalInfo] = useState({
+    degree: "defree",
+    school: "",
+    city: "",
+    country: "",
+    yearBegin: "",
+    yearEnd: "",
+  });
+
+  const [professionalInfo, setProfessionalInfo] = useState({
+    jobTitle: "defree",
+    company: "",
+    skillDesc: "",
+    yearBegin: "",
+    yearEnd: "",
+  });
+
+  
+  
   return (
     <div className="wrapper">
-     
-      <CvForm generalInfo={generalInfo} setGeneralInfo={setGeneralInfo}></CvForm>
-      <CvPreview generalInfo={generalInfo}></CvPreview>
+      <CvForm
+        generalInfo={generalInfo}
+        setGeneralInfo={setGeneralInfo}
+        educationalInfo={educationalInfo}
+        setEducationalInfo={setEducationalInfo}
+        professionalInfo={professionalInfo}
+        setProfessionalInfo={setProfessionalInfo}
+      ></CvForm>
+      <CvPreview generalInfo={generalInfo} educationalInfo={educationalInfo} professionalInfo={professionalInfo}></CvPreview>
     </div>
   );
 }
