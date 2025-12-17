@@ -1,15 +1,29 @@
+import { formatMonthYear } from "../utils";
+
 function EducationalExperiencePreview({ degree, school, city, country, yearBegin, yearEnd }) {
-  console.log(degree, school, city);
+  const entryDate = yearBegin && yearEnd ? `${formatMonthYear(yearBegin)} - ${formatMonthYear(yearEnd)}` : "";
 
   return (
-    <div>
-      <h1>{degree}</h1>
-      <h2>{school}</h2>
-      <h2>{city}</h2>
-      <h2>{country}</h2>
-      <h2>{yearBegin}</h2>
-      <h2>{yearEnd}</h2>
-    </div>
+    <section className="cv__section cv__section--education">
+      <h2 className="cv__section-title">Education</h2>
+
+      <div className="cv__entry-details">
+        <div className="cv__entry">
+          {degree && <h3 className="cv__entry-title">{degree}</h3>}{" "}
+          {yearBegin && yearEnd && <span className="cv__entry-date">{entryDate}</span>}
+        </div>
+
+        <div className="cv__entry-meta">
+          {school && <span className="cv__entry-org">{school}</span>}
+
+          {city && country && (
+            <span className="cv__entry-location">
+              {city}, {country}
+            </span>
+          )}
+        </div>
+      </div>
+    </section>
   );
 }
 

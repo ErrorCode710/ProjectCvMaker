@@ -1,16 +1,15 @@
-function GeneralInformationPreview({name = "test",email,phoneNo,address}){
-console.log(name)
-    
-return (
-  <div>
-    <h1>{name}</h1>
-    <h2>{email}</h2>
-    <h2>{phoneNo}</h2>
-    <h2>{address}</h2>
-    <h2>hi</h2>
-  </div>
-);
+function GeneralInformationPreview({ name, email, phoneNo, address }) {
+  return (
+    <header className="cv__header">
+      <h1 className="cv__name">{name}</h1>
 
+      <ul className="cv__contact">
+        {email && <li className="cv__contact-item">{email}</li>}
+        {phoneNo && <li className="cv__contact-item">{phoneNo}</li>}
+        {address && <li className="cv__contact-item">{address}</li>}
+      </ul>
+    </header>
+  );
 }
 
-export default GeneralInformationPreview
+export default GeneralInformationPreview;

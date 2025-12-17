@@ -48,7 +48,7 @@ function ProfessionalExperience({ professionalInfo, setProfessionalInfo }) {
             onChange={(e) => handleChange("yearEnd", e.target.value)}
           ></Input>
           <div>
-            <label>Skill Description</label>
+            <p>Skill Description</p>
             <textarea
               value={professionalInfo.skillDesc}
               onChange={(e) => handleChange("skillDesc", e.target.value)}

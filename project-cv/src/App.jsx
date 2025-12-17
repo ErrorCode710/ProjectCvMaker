@@ -1,4 +1,6 @@
 import "./App.css";
+import "./styles/global.css";
+import "./styles/style.css"
 
 import CvBuilder from "./components/CvBuilder";
 

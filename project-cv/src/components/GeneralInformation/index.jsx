@@ -40,7 +40,7 @@ function GeneralInformation({ generalInfo, setGeneralInfo }) {
           ></Input>
         </form>
 
-        <CvButton style="button-9" name="Submit"></CvButton>
+        <CvButton style="button-9" name="Add"></CvButton>
         <CvButton style="button-9 button-9-edit" name="Edit"></CvButton>
       </div>
     </div>

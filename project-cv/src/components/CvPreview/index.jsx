@@ -4,11 +4,11 @@ import ProfessionalExperiencePreview from "../ProfessionalExperience/Preview";
 
 function CvPreview({ generalInfo, educationalInfo, professionalInfo }) {
   return (
-    <div className="cv-preview">
+    <article className="cv-preview">
       <GeneralInformationPreview {...generalInfo} />
       <EducationalExperiencePreview {...educationalInfo} />
       <ProfessionalExperiencePreview {...professionalInfo} />
-    </div>
+    </article>
   );
 }
 
