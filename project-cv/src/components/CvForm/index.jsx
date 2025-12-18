@@ -6,7 +6,7 @@ import CvButton from "../CvButton";
 // import "./CvForm.css";
 
 function CvForm(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <div className="cvContainer">
       <div className="cv-actions">
@@ -21,10 +21,12 @@ function CvForm(props) {
       <EducationalExperience
         educationalInfo={props.educationalInfo}
         setEducationalInfo={props.setEducationalInfo}
+        buttonAction={props.cvButtonActions.addEntryEducation}
       ></EducationalExperience>
       <ProfessionalExperience
         professionalInfo={props.professionalInfo}
         setProfessionalInfo={props.setProfessionalInfo}
+        buttonAction={props.cvButtonActions.addEntryProfessions}
       ></ProfessionalExperience>
     </div>
   );

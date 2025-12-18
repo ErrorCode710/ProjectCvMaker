@@ -2,7 +2,7 @@
 import Input from "../Input";
 import CvButton from "../CvButton";
 
-function EducationalExperience({ educationalInfo, setEducationalInfo }) {
+function EducationalExperience({ educationalInfo, setEducationalInfo, buttonAction }) {
   //   console.log(useState(4));
   // const [degree, setDegree] = useState("");
   // const [school, setSchool] = useState("");
@@ -11,7 +11,7 @@ function EducationalExperience({ educationalInfo, setEducationalInfo }) {
   // const [yearBegin, setYearBegin] = useState("");
   // const [yearEnd, setYearEnd] = useState("");
 
-  console.log(educationalInfo);
+  // console.log(educationalInfo);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,6 +28,7 @@ function EducationalExperience({ educationalInfo, setEducationalInfo }) {
   return (
     <div>
       <h2 className="section-title">Educational Experience</h2>
+      <ul></ul>
       <div>
         <form onSubmit={handleSubmit} className="formInputContainer">
           <Input
@@ -59,7 +60,7 @@ function EducationalExperience({ educationalInfo, setEducationalInfo }) {
             onChange={(e) => handleChange("yearEnd", e.target.value)}
           ></Input>
         </form>
-        <CvButton style="button-9" name="Add"></CvButton>
+        <CvButton style="button-9" name="Add" onClick={buttonAction}></CvButton>
         <CvButton style="button-9 button-9-edit" name="Edit"></CvButton>
       </div>
     </div>
