@@ -5,29 +5,45 @@ import CvButton from "../CvButton";
 // import classes from "./CvForm.module.css";
 // import "./CvForm.css";
 
-function CvForm(props) {
-  // console.log(props);
+function CvForm({
+  generalInfo,
+  setGeneralInfo,
+  educationalInfo,
+  setEducationalInfo,
+  educations,
+  professionalInfo,
+  setProfessionalInfo,
+  profession,
+  onAddEducation,
+  onAddProfession,
+  onLoadSample,
+  onClear,
+  onSaveGeneral,
+}) {
+  console.log(educations);
   return (
     <div className="cvContainer">
       <div className="cv-actions">
-        <CvButton style="button-9 button-9-edit" onClick={props.cvButtonActions.clearSampleData} name="Reset CV">
-          Reset CV
-        </CvButton>
-        <CvButton style="button-9 " onClick={props.cvButtonActions.loadSampleData} name="Load Sample">
-          Load Sample CV
-        </CvButton>
+        <CvButton style="button-9 button-9-edit" onClick={onClear} name="Reset CV" />
+
+        <CvButton style="button-9" onClick={onLoadSample} name="Load Sample CV" />
       </div>
-      <GeneralInformation generalInfo={props.generalInfo} setGeneralInfo={props.setGeneralInfo}></GeneralInformation>
+
+      <GeneralInformation generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} onSaveGeneral={onSaveGeneral} />
+
       <EducationalExperience
-        educationalInfo={props.educationalInfo}
-        setEducationalInfo={props.setEducationalInfo}
-        buttonAction={props.cvButtonActions.addEntryEducation}
-      ></EducationalExperience>
+        educationalInfo={educationalInfo}
+        setEducationalInfo={setEducationalInfo}
+        onAddEducation={onAddEducation}
+        educations={educations}
+      />
+
       <ProfessionalExperience
-        professionalInfo={props.professionalInfo}
-        setProfessionalInfo={props.setProfessionalInfo}
-        buttonAction={props.cvButtonActions.addEntryProfessions}
-      ></ProfessionalExperience>
+        professionalInfo={professionalInfo}
+        setProfessionalInfo={setProfessionalInfo}
+        onAddProfession={onAddProfession}
+        profession={profession}
+      />
     </div>
   );
 }

@@ -1,8 +1,10 @@
 // import { useState } from "react";
 import Input from "../Input";
 import CvButton from "../CvButton";
+import EntryList from "../EntryList";
 
-function EducationalExperience({ educationalInfo, setEducationalInfo, buttonAction }) {
+function EducationalExperience({ educationalInfo, setEducationalInfo, onAddEducation, educations }) {
+  console.log(educations)
   //   console.log(useState(4));
   // const [degree, setDegree] = useState("");
   // const [school, setSchool] = useState("");
@@ -28,7 +30,7 @@ function EducationalExperience({ educationalInfo, setEducationalInfo, buttonActi
   return (
     <div>
       <h2 className="section-title">Educational Experience</h2>
-      <ul></ul>
+      <EntryList items={educations}></EntryList>
       <div>
         <form onSubmit={handleSubmit} className="formInputContainer">
           <Input
@@ -60,7 +62,7 @@ function EducationalExperience({ educationalInfo, setEducationalInfo, buttonActi
             onChange={(e) => handleChange("yearEnd", e.target.value)}
           ></Input>
         </form>
-        <CvButton style="button-9" name="Add" onClick={buttonAction}></CvButton>
+        <CvButton style="button-9" name="Add" onClick={onAddEducation}></CvButton>
         <CvButton style="button-9 button-9-edit" name="Edit"></CvButton>
       </div>
     </div>

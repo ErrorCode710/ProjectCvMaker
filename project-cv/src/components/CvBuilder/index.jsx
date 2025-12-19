@@ -33,6 +33,11 @@ function CvBuilder() {
     phoneNo: "",
     address: "",
   });
+  
+  const onSaveGeneral = (general) => {
+   
+    setGeneralInfo(general);
+  }
 
   // blue print
   const [educationalInfo, setEducationalInfo] = useState({
@@ -91,14 +96,20 @@ function CvBuilder() {
   return (
     <div className="wrapper">
       <CvForm
-        cvButtonActions={{ loadSampleData, clearSampleData, addEntryEducation, addEntryProfessions }}
         generalInfo={generalInfo}
         setGeneralInfo={setGeneralInfo}
+        onSaveGeneral={onSaveGeneral}
         educationalInfo={educationalInfo}
         setEducationalInfo={setEducationalInfo}
+        onAddEducation={addEntryEducation}
+        educations={education}
         professionalInfo={professionalInfo}
         setProfessionalInfo={setProfessionalInfo}
-      ></CvForm>
+        onAddProfession={addEntryProfessions}
+        professions={professions}
+        onLoadSample={loadSampleData}
+        onClear={clearSampleData}
+      />
       <CvPreview generalInfo={generalInfo} educationalInfo={education} professionalInfo={professions}></CvPreview>
     </div>
   );

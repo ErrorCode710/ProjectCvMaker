@@ -1,18 +1,15 @@
 // import { useState } from "react";
 import Input from "../Input";
 import CvButton from "../CvButton";
+import { useState } from "react";
 
-function GeneralInformation({ generalInfo, setGeneralInfo }) {
-  //   console.log(useState(4));
-  // const [name, setName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [phoneNo, setPhoneNo] = useState("");
-  // const [address, setAddress] = useState("");
+function GeneralInformation({ generalInfo, onSaveGeneral }) {
+  const [draft, setDraft] = useState(generalInfo);
+  console.log(draft);
 
-  console.log(generalInfo);
   const handleChange = (field, value) => {
-    setGeneralInfo({
-      ...generalInfo,
+    setDraft({
+      ...draft,
       [field]: value,
     });
   };
@@ -26,22 +23,21 @@ function GeneralInformation({ generalInfo, setGeneralInfo }) {
       <h2 className="section-title">General Information</h2>
       <div>
         <form onSubmit={handleSubmit} className="formInputContainer">
-          <Input label="Name" value={generalInfo.name} onChange={(e) => handleChange("name", e.target.value)}></Input>
-          <Input label="Email" value={generalInfo.email} onChange={(e) => handleChange("email", e.target.value)}></Input>
+          <Input label="Name" value={draft.name} onChange={(e) => handleChange("name", e.target.value)}></Input>
+          <Input label="Email" value={draft.email} onChange={(e) => handleChange("email", e.target.value)}></Input>
           <Input
             label="Phone Number"
-            value={generalInfo.phoneNo}
+            value={draft.phoneNo}
             onChange={(e) => handleChange("phoneNo", e.target.value)}
           ></Input>
           <Input
             label="City and Province"
-            value={generalInfo.address}
+            value={draft.address}
             onChange={(e) => handleChange("address", e.target.value)}
           ></Input>
         </form>
 
-        <CvButton style="button-9" name="Add"></CvButton>
-        <CvButton style="button-9 button-9-edit" name="Edit"></CvButton>
+        <CvButton style="button-9" name="Save" onClick={() => onSaveGeneral(draft)}></CvButton>
       </div>
     </div>
   );

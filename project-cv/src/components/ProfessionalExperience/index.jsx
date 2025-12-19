@@ -2,12 +2,7 @@ import Input from "../Input";
 import CvButton from "../CvButton";
 import EntryList from "../EntryList";
 function ProfessionalExperience({ professionalInfo, setProfessionalInfo }) {
-  //   console.log(useState(4));
-  // const [jobTitle, setJobTitle] = useState("");
-  // const [company, setCompany] = useState("");
-  // const [skillDesc, setSkillDesc] = useState("");
-  // const [yearBegin, setYearBegin] = useState("");
-  // const [yearEnd, setYearEnd] = useState("");
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
