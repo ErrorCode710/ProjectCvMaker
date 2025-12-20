@@ -97,6 +97,15 @@ body {
   color: #1f2937;
 }
 
+.button-9-list {
+  background-color: #f9fafb;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+.button-9-list:hover {
+  background-color: #f3f4f6;
+}
 .button-9-edit:hover {
   background-color: #fbfbfb;
 }
@@ -206,6 +215,14 @@ body {
   margin: 0 1.25rem;
 }
 
+.cv__entry-org {
+  border-bottom: 2px solid #202020;
+}
+
 ul {
   padding: 0;
+}
+
+li {
+  list-style: none;
 }

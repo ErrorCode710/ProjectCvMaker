@@ -3,20 +3,16 @@ import Input from "../Input";
 import CvButton from "../CvButton";
 import EntryList from "../EntryList";
 
-function EducationalExperience({ educationalInfo, setEducationalInfo, onAddEducation, educations }) {
-  console.log(educations)
-  //   console.log(useState(4));
-  // const [degree, setDegree] = useState("");
-  // const [school, setSchool] = useState("");
-  // const [city, setCity] = useState("");
-  // const [country, setCountry] = useState("");
-  // const [yearBegin, setYearBegin] = useState("");
-  // const [yearEnd, setYearEnd] = useState("");
+function EducationalExperience({ educationalInfo, setEducationalInfo, onAddEducation, educations,setEditingEduId }) {
+  // console.log(educations);
 
   // console.log(educationalInfo);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    onAddEducation();
+
     console.log("Submitted:");
   };
 
@@ -27,15 +23,25 @@ function EducationalExperience({ educationalInfo, setEducationalInfo, onAddEduca
     });
   };
 
+  const editEducation = (edu) => {
+    setEducationalInfo(edu)
+    setEditingEduId(edu.id)
+
+  }
+
+  // TO DO 
+  // WHEN ADDING FIRST ENTRY IT GONE NOT REFLECTING ON THE SECTION ALSO AND THE ENTRY BUT ON THE SECOND ENTRY IT APPEAR 
+
   return (
     <div>
       <h2 className="section-title">Educational Experience</h2>
-      <EntryList items={educations}></EntryList>
+      <EntryList editEntry={editEducation} items={educations}></EntryList>
       <div>
         <form onSubmit={handleSubmit} className="formInputContainer">
           <Input
             label="Degree"
             value={educationalInfo.degree}
+            required
             onChange={(e) => handleChange("degree", e.target.value)}
           ></Input>
           <Input
@@ -61,9 +67,9 @@ function EducationalExperience({ educationalInfo, setEducationalInfo, onAddEduca
             value={educationalInfo.yearEnd}
             onChange={(e) => handleChange("yearEnd", e.target.value)}
           ></Input>
+          <CvButton type="submit" style="button-9" name="Add"></CvButton>
+          <CvButton style="button-9 button-9-edit" name="Edit"></CvButton>
         </form>
-        <CvButton style="button-9" name="Add" onClick={onAddEducation}></CvButton>
-        <CvButton style="button-9 button-9-edit" name="Edit"></CvButton>
       </div>
     </div>
   );

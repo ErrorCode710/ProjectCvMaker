@@ -1,7 +1,6 @@
-function CvButton({ style, onClick, name }) {
-  
+function CvButton({ style, onClick, name, type }) {
   return (
-    <button className={style} onClick={onClick}>
+    <button type={type} className={style} onClick={onClick}>
       {name}
     </button>
   );

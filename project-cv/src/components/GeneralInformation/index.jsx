@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function GeneralInformation({ generalInfo, onSaveGeneral }) {
   const [draft, setDraft] = useState(generalInfo);
-  console.log(draft);
+
 
   const handleChange = (field, value) => {
     setDraft({

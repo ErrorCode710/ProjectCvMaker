@@ -1,10 +1,9 @@
 import Input from "../Input";
 import CvButton from "../CvButton";
 import EntryList from "../EntryList";
-function ProfessionalExperience({ professionalInfo, setProfessionalInfo }) {
- 
-
+function ProfessionalExperience({ professionalInfo, setProfessionalInfo, professions, onAddProfession, setEditingProfId }) {
   const handleSubmit = (e) => {
+    onAddProfession();
     e.preventDefault();
   };
 
@@ -15,11 +14,18 @@ function ProfessionalExperience({ professionalInfo, setProfessionalInfo }) {
     });
   };
 
+  const editProfesison = (prof) => {
+    console.log("prof state", prof);
+    setProfessionalInfo(prof);
+    setEditingProfId(prof.id);
+  };
+  console.log(professions);
+
   return (
     <div>
       <h2 className="section-title">Professional Experience</h2>
       <ul>
-        <EntryList></EntryList>
+        <EntryList editEntry={editProfesison} items={professions}></EntryList>
       </ul>
       <div>
         <form onSubmit={handleSubmit} className="formInputContainer">
@@ -27,6 +33,7 @@ function ProfessionalExperience({ professionalInfo, setProfessionalInfo }) {
             label="Job Title"
             value={professionalInfo.jobTitle}
             onChange={(e) => handleChange("jobTitle", e.target.value)}
+            required
           ></Input>
           <Input
             label="Company"
@@ -52,7 +59,7 @@ function ProfessionalExperience({ professionalInfo, setProfessionalInfo }) {
               onChange={(e) => handleChange("skillDesc", e.target.value)}
             ></textarea>
           </div>
-          <CvButton style="button-9" name="Submit"></CvButton>
+          <CvButton type="submit" style="button-9" name="Add"></CvButton>
           <CvButton style="button-9 button-9-edit" name="Edit"></CvButton>
         </form>
       </div>

@@ -11,9 +11,11 @@ function CvForm({
   educationalInfo,
   setEducationalInfo,
   educations,
+  setEditingEduId,
   professionalInfo,
   setProfessionalInfo,
-  profession,
+  professions,
+  setEditingProfId,
   onAddEducation,
   onAddProfession,
   onLoadSample,
@@ -36,13 +38,15 @@ function CvForm({
         setEducationalInfo={setEducationalInfo}
         onAddEducation={onAddEducation}
         educations={educations}
+        setEditingEduId={setEditingEduId}
       />
 
       <ProfessionalExperience
         professionalInfo={professionalInfo}
         setProfessionalInfo={setProfessionalInfo}
         onAddProfession={onAddProfession}
-        profession={profession}
+        professions={professions}
+        setEditingProfId={setEditingProfId}
       />
     </div>
   );
