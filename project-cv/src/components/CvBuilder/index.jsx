@@ -109,16 +109,6 @@ function CvBuilder() {
   const [professions, setProfessions] = useState([]);
   const [editingProfId, setEditingProfId] = useState(null);
 
-  // const addEntryProfessions = () => {
-  //   setProfessions((prev) => [...prev, professionalInfo]);
-  //   setProfessionalInfo({
-  //     jobTitle: "",
-  //     company: "",
-  //     skillDesc: "",
-  //     yearBegin: "",
-  //     yearEnd: "",
-  //   });
-  // };
 
   const saveProfesisonalEntry = () => {
     console.log("editingID State", editingProfId);
@@ -131,7 +121,7 @@ function CvBuilder() {
       );
       console.log("SUCCESS EDIT", professions);
     }
-
+    //
     //reset
     setProfessionalInfo({
       id: null,
@@ -144,6 +134,8 @@ function CvBuilder() {
     console.log("PROFESSION", professions);
     setEditingProfId(null);
   };
+
+  console.log(null);
 
   // ------------------------
   // Utility Actions
