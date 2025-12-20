@@ -1,7 +1,14 @@
 import Input from "../Input";
 import CvButton from "../CvButton";
 import EntryList from "../EntryList";
-function ProfessionalExperience({ professionalInfo, setProfessionalInfo, professions, onAddProfession, setEditingProfId }) {
+function ProfessionalExperience({
+  professionalInfo,
+  setProfessionalInfo,
+  professions,
+  onAddProfession,
+  setEditingProfId,
+  editingProfId,
+}) {
   const handleSubmit = (e) => {
     onAddProfession();
     e.preventDefault();
@@ -11,6 +18,18 @@ function ProfessionalExperience({ professionalInfo, setProfessionalInfo, profess
     setProfessionalInfo({
       ...professionalInfo,
       [field]: value,
+    });
+  };
+
+  const handleCancel = () => {
+    setEditingProfId(null);
+    setProfessionalInfo({
+      id: null,
+      jobTitle: "",
+      company: "",
+      skillDesc: "",
+      yearBegin: "",
+      yearEnd: "",
     });
   };
 
@@ -59,8 +78,11 @@ function ProfessionalExperience({ professionalInfo, setProfessionalInfo, profess
               onChange={(e) => handleChange("skillDesc", e.target.value)}
             ></textarea>
           </div>
-          <CvButton type="submit" style="button-9" name="Add"></CvButton>
-          <CvButton style="button-9 button-9-edit" name="Edit"></CvButton>
+          <CvButton type="submit" style="button-9" name={editingProfId === null ? "Add" : "Edit"}></CvButton>
+          {/* <CvButton style="button-9 button-9-edit" name="Edit"></CvButton> */}
+          {editingProfId !== null && (
+            <CvButton type="button" style="button-9 button-9-edit" name="Cancel" onClick={handleCancel}></CvButton>
+          )}
         </form>
       </div>
     </div>

@@ -3,7 +3,14 @@ import Input from "../Input";
 import CvButton from "../CvButton";
 import EntryList from "../EntryList";
 
-function EducationalExperience({ educationalInfo, setEducationalInfo, onAddEducation, educations,setEditingEduId }) {
+function EducationalExperience({
+  educationalInfo,
+  setEducationalInfo,
+  onAddEducation,
+  educations,
+  setEditingEduId,
+  editingEduId,
+}) {
   // console.log(educations);
 
   // console.log(educationalInfo);
@@ -24,13 +31,25 @@ function EducationalExperience({ educationalInfo, setEducationalInfo, onAddEduca
   };
 
   const editEducation = (edu) => {
-    setEducationalInfo(edu)
-    setEditingEduId(edu.id)
+    setEducationalInfo(edu);
+    setEditingEduId(edu.id);
+  };
 
-  }
+  const handleCancel = () => {
+    setEditingEduId(null);
+    setEducationalInfo({
+      degree: "",
+      school: "",
+      city: "",
+      country: "",
+      yearBegin: "",
+      yearEnd: "",
+    });
+    
+  };
 
-  // TO DO 
-  // WHEN ADDING FIRST ENTRY IT GONE NOT REFLECTING ON THE SECTION ALSO AND THE ENTRY BUT ON THE SECOND ENTRY IT APPEAR 
+  // TO DO
+  // WHEN ADDING FIRST ENTRY IT GONE NOT REFLECTING ON THE SECTION ALSO AND THE ENTRY BUT ON THE SECOND ENTRY IT APPEAR
 
   return (
     <div>
@@ -67,8 +86,11 @@ function EducationalExperience({ educationalInfo, setEducationalInfo, onAddEduca
             value={educationalInfo.yearEnd}
             onChange={(e) => handleChange("yearEnd", e.target.value)}
           ></Input>
-          <CvButton type="submit" style="button-9" name="Add"></CvButton>
-          <CvButton style="button-9 button-9-edit" name="Edit"></CvButton>
+          <CvButton type="submit" style="button-9" name={editingEduId === null ? "Add" : "Edit"}></CvButton>
+          {/* <CvButton style="button-9 button-9-edit" name="Edit"></CvButton> */}
+          {editingEduId !== null && (
+            <CvButton type="button" style="button-9 button-9-edit" name="Cancel" onClick={handleCancel}></CvButton>
+          )}
         </form>
       </div>
     </div>

@@ -21,6 +21,8 @@ function CvForm({
   onLoadSample,
   onClear,
   onSaveGeneral,
+  editingEduId,
+  editingProfId,
 }) {
   console.log(educations);
   return (
@@ -39,6 +41,7 @@ function CvForm({
         onAddEducation={onAddEducation}
         educations={educations}
         setEditingEduId={setEditingEduId}
+        editingEduId={editingEduId}
       />
 
       <ProfessionalExperience
@@ -47,6 +50,7 @@ function CvForm({
         onAddProfession={onAddProfession}
         professions={professions}
         setEditingProfId={setEditingProfId}
+        editingProfId={editingProfId}
       />
     </div>
   );

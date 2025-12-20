@@ -182,11 +182,13 @@ function CvBuilder() {
         onAddEducation={saveEducationEntry}
         educations={education}
         setEditingEduId={setEditingEduId}
+        editingEduId={editingEduId}
         professionalInfo={professionalInfo}
         setProfessionalInfo={setProfessionalInfo}
         onAddProfession={saveProfesisonalEntry}
         professions={professions}
         setEditingProfId={setEditingProfId}
+        editingProfId={editingProfId}
         onLoadSample={loadSampleData}
         onClear={clearSampleData}
       />
